@@ -14,7 +14,7 @@ app.listen(server_port, () => console.log(`App listening on port ${server_port}!
 **************************************************************************/
 
 const SerialPort = require('serialport')
-const port = new SerialPort('COM12', { baudRate: 115200 })
+const port = new SerialPort('/dev/cu.usbserial-0001', { baudRate: 115200 })
 
 const Readline = require('@serialport/parser-readline').ReadlineParser
 const parser = port.pipe(new Readline({ delimiter: '\n' }))
